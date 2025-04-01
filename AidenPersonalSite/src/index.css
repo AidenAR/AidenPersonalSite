@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 0 72.2% 50.6%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-caribbean-red to-uwaterloo-gold bg-clip-text text-transparent;
+  }
+  
+  .nav-link {
+    @apply relative hover:text-primary transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white font-medium px-6 py-2 rounded-md hover:bg-primary/90 transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary font-medium px-6 py-2 rounded-md hover:bg-primary/10 transition-colors;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 relative;
+  }
+  
+  .section-title:after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-16 h-1 bg-primary -mb-2;
+  }
+
+  .experience-card {
+    @apply relative pl-6 pb-8 border-l border-gray-200;
+  }
+
+  .experience-card::before {
+    content: '';
+    @apply absolute w-3 h-3 bg-primary rounded-full -left-[6.5px] top-2;
+  }
+
+  .project-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-md card-hover border border-gray-100;
+  }
+}
