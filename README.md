@@ -1,5 +1,7 @@
 https://aidenramgoolam.netlify.app/
 
+UNFINISHED - WILL EDIT AFTER FINALS SO MID APRIL
+
 npm i
 npm run dev
 
